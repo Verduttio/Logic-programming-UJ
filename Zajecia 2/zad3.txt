@@ -1,0 +1,21 @@
+krawedz(a, b).
+krawedz(b, c).
+krawedz(b, d).
+krawedz(c, e).
+krawedz(c, f).
+krawedz(d, f).
+krawedz(f, e).
+
+sciezka(X, Y) :- krawedz(X, Y).
+sciezka(X, Z) :- krawedz(X, Y), sciezka(Y, Z).
+
+
+sciezka_dl(X,Y,N) :- N=1, krawedz(X,Y).
+sciezka_dl(X,Y,N) :- N>1, N1 is N - 1, krawedz(X,Z), sciezka_dl(Z,Y,N1).
+
+
+
+c.
+1. sciezka(a, d), sciezka(d, f).
+2. sciezka_dl(X, f, 3).
+3. sciezka(X, X).

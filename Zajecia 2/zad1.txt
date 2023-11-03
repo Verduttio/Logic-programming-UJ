@@ -1,0 +1,13 @@
+s(0,1).
+s(N, S) :- N>0, N1 is N-1,
+    s(N1, S1), S is S1*N.
+
+
+s(0,1).
+s(N, S1*N) :- N>0, N1 is N-1,
+    s(N1, S1).
+
+%s(5, S), X is S.
+
+
+aa(X*Y, X+Y).  %aa(2*3, Z), S is Z

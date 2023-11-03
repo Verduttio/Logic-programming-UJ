@@ -1,0 +1,25 @@
+% c(X, Y) ---X + Y  i 
+cmult(c(X, Y), c(A, B), c(D, E)) :- 
+    D is X*A - Y*B, 
+    E is X*B + Y*A.
+
+
+
+% another version
+cmult(c(X, Y), c(A, B), W) :- 
+    D is X*A - Y*B, 
+    E is X*B + Y*A,
+    W = c(D, E).
+
+
+suma(wektor(A, B, C), wektor(D, E, F), W) :-
+    X is A + D,
+    Y is B + E,
+    Z is C + F,
+    W = wektor(X, Y, Z).
+
+iloczyn_sk(wektor(A, B, C), wektor(D, E, F), W) :-
+    X is A*D,
+    Y is B*E,
+    Z is C*F,
+    W is X + Y + Z.

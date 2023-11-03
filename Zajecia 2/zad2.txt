@@ -1,0 +1,17 @@
+A is sqrt(100).
+
+delta(A, B, C, D) :- D is B*B - 4*A*C.
+
+%(-b +- sqrt(delta))/(2a)
+
+pierw(A, B, C, X) :- 
+    delta(A, B, C, D), D>0,
+    X is (-B + sqrt(D))/(2*A).
+
+pierw(A, B, C, X) :- 
+    delta(A, B, C, D), D>0,
+    X is (-B - sqrt(D))/(2*A).
+
+pierw(A, B, C, X) :- 
+    delta(A, B, C, D), D=0,
+    X is (-B)/(2*A).
