@@ -5,8 +5,8 @@ path_helper(_, End, End, Path_tmp, Path_tmp).
 path_helper(Labyrinth, [X, Y], End, Path_tmp, Path) :-
     path_neighbour(Labyrinth, [X, Y], [X_New, Y_New]),
     not_visited([X_New, Y_New], Path_tmp),
-    append(Path_tmp, [[X_New, Y_New]], NewPath),
-    path_helper(Labyrinth, [X_New, Y_New], End, NewPath, Path).
+    append(Path_tmp, [[X_New, Y_New]], Path_new),
+    path_helper(Labyrinth, [X_New, Y_New], End, Path_new, Path).
 
 not_visited(Point, Path) :-
     \+ member(Point, Path).
